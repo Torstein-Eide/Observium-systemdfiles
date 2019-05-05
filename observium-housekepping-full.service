@@ -1,0 +1,12 @@
+[Unit]
+Description="Observium Run housekeeping script daily for rrds, ports, orphaned entries in the database and performance data"
+Documentation="https://docs.observium.org/install_debian/#perform-initial-discovery-and-poll"
+#OnFailure=cron-failure@%i.service
+Requires=mariadb.service rrdcached.service
+RequiresMountsFor=/opt/observium
+
+[Service]
+Type=oneshot
+IgnoreSIGPIPE=false
+ExecStart=/usr/bin/php /opt/observium/housekeeping.php -ysel >> /dev/null
+User=observium

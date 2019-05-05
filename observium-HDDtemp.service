@@ -1,0 +1,12 @@
+[Unit]
+Description="Observium Run multithreaded poller wrapper every 5 minute"
+Documentation="https://docs.observium.org/apps/#hddtemp"
+#OnFailure=cron-failure@%i.service
+Requires=mariadb.service rrdcached.service
+RequiresMountsFor=/home/observium
+
+[Service]
+Type=oneshot
+IgnoreSIGPIPE=false
+ExecStart=/bin/sh /usr/lib/observium_agent/scripts-available/hddtemp > /tmp/hddtemp
+User=observium

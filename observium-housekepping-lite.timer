@@ -1,0 +1,9 @@
+[Unit]
+Description=[Timer] "Observium Run housekeeping script daily for syslog, eventlog and alert log, once a day"
+Documentation="https://docs.observium.org/install_debian/#perform-initial-discovery-and-poll"
+PartOf=observium.target
+
+
+[Timer]
+Unit=observium-discovery.service
+OnCalendar=5:13:00

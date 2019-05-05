@@ -1,0 +1,9 @@
+[Unit]
+Description=[Timer] "Observium runs a discovery of all devices every 6 hours"
+Documentation="https://docs.observium.org/install_debian/#perform-initial-discovery-and-poll"
+PartOf=observium.target
+
+
+[Timer]
+Unit=observium-discovery.service
+OnCalendar=0/5:00

@@ -1,0 +1,12 @@
+[Unit]
+Description="Observium Run multithreaded poller wrapper every 5 minute"
+Documentation="https://docs.observium.org/install_debian/#perform-initial-discovery-and-poll"
+#OnFailure=cron-failure@%i.service
+Requires=mariadb.service rrdcached.service
+RequiresMountsFor=/opt/observium
+
+[Service]
+Type=oneshot
+IgnoreSIGPIPE=false
+ExecStart=/usr/bin/php /opt/observium/poller-wrapper.py >> /dev/null
+User=observium

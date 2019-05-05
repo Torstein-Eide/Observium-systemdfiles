@@ -1,0 +1,11 @@
+[Unit]
+Description="observium grouping of service"
+Documentation="https://docs.observium.org/install_debian/#perform-initial-discovery-and-poll"
+Requires=observium-discovery-all.service
+Requires=observium-discovery-new.service
+Requires=observium-housekeeping-lite.service
+Requires=observium-housekeeping-full.service
+Requires=observium-HDDtemp.service
+
+[Install]
+WantedBy=multi-user.target

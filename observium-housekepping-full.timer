@@ -1,0 +1,9 @@
+[Unit]
+Description=[Timer] "Observium Run housekeeping script daily for rrds, ports, orphaned entries in the database and performance data"
+Documentation="https://docs.observium.org/install_debian/#perform-initial-discovery-and-poll"
+PartOf=observium.target
+
+
+[Timer]
+Unit=observium-discovery.service
+OnCalendar=4:47:00

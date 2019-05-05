@@ -1,0 +1,12 @@
+[Unit]
+Description="Observium Run housekeeping script daily for syslog, eventlog and alert log"
+Documentation="https://docs.observium.org/install_debian/#perform-initial-discovery-and-poll"
+#OnFailure=cron-failure@%i.service
+Requires=mariadb.service rrdcached.service
+RequiresMountsFor=/opt/observium
+
+[Service]
+Type=oneshot
+IgnoreSIGPIPE=false
+ExecStart=/usr/bin/php /opt/observium/housekeeping.php -yrptb >> /dev/null
+User=observium
