@@ -1,5 +1,5 @@
 [Unit]
-Description="Observium runs a discovery of all devices"
+Description="Observium Run automated discovery of newly added devices every 5 minutes"
 Documentation="https://docs.observium.org/install_debian/#perform-initial-discovery-and-poll"
 #OnFailure=cron-failure@%i.service
 Requires=mariadb.service rrdcached.service
