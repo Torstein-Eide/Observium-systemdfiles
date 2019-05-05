@@ -7,3 +7,6 @@ PartOf=observium.target
 [Timer]
 Unit=observium-discovery.service
 OnCalendar=0/6:33:00
+
+[Install]
+WantedBy=observium.target
