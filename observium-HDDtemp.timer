@@ -6,7 +6,7 @@ PartOf=observium.target
 
 [Timer]
 Unit=observium-HDDtemp.service
-OnCalendar=0/5:00
+OnCalendar=*:0/5
 
 [Install]
 WantedBy=observium.target
