@@ -8,5 +8,5 @@ RequiresMountsFor=/opt/observium
 [Service]
 Type=oneshot
 IgnoreSIGPIPE=false
-ExecStart=/usr/bin/php /opt/observium/poller-wrapper.py >> /dev/null
+ExecStart=/usr/bin/python3.6 /opt/observium/poller-wrapper.py
 User=observium
