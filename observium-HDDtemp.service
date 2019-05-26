@@ -6,6 +6,7 @@ Requires=mariadb.service rrdcached.service
 RequiresMountsFor=/home/observium
 
 [Service]
+SyslogIdentifier=​Observium-hddtemp
 Type=oneshot
 IgnoreSIGPIPE=false
 ExecStart=/bin/sh /usr/lib/observium_agent/scripts-available/hddtemp > /tmp/hddtemp

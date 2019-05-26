@@ -6,7 +6,8 @@ Requires=mariadb.service rrdcached.service
 RequiresMountsFor=/opt/observium
 
 [Service]
+SyslogIdentifier=​Observium-discovery-all
 Type=oneshot
 IgnoreSIGPIPE=false
-ExecStart=/usr/bin/php /opt/observium/discovery.php -h all >> /dev/null
+ExecStart=/usr/bin/php /opt/observium/discovery.php -h all -q
 User=observium
