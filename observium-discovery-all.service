@@ -9,5 +9,8 @@ RequiresMountsFor=/opt/observium
 SyslogIdentifier=​Observium-discovery-all
 Type=oneshot
 IgnoreSIGPIPE=false
-ExecStart=/usr/bin/php /opt/observium/discovery.php -h all -q
+
+# ExecStart=/usr/bin/php /opt/observium/discovery.php -h all -q
+# python version
+ExecStart=/usr/bin/python3.6 /opt/observium/poller-wrapper.py discovery
 User=observium
