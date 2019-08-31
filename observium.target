@@ -3,7 +3,7 @@ Description="Observium target"
 Documentation=man:systemd.special(7)
 Requires=multi-user.target
 #Conflicts=rescue.service rescue.target
-wants=observium-discovery-all.timer  observium-discovery-new.timer  observium-HDDtemp.timer  observium-housekeeping-full.timer  observium-housekeeping-lite.timer  observium-poller.timer
+Wants=observium-discovery-all.timer  observium-discovery-new.timer  observium-HDDtemp.timer  observium-housekeeping-full.timer  observium-housekeeping-lite.timer  observium-poller.timer
 After=multi-user.target
 AllowIsolate=yes
 

@@ -12,6 +12,6 @@ IgnoreSIGPIPE=false
 
 # ExecStart=/usr/bin/php /opt/observium/discovery.php -h all -q
 # python version
-ExecStart=/usr/bin/python3.6 /opt/observium/poller-wrapper.py discovery
-StandardOutput=null
+ExecStart=/usr/bin/python3 /opt/observium/poller-wrapper.py discovery
+#StandardOutput=null
 User=observium
