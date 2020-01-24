@@ -10,6 +10,6 @@ SyslogIdentifier=​Observium-discovery-new
 Type=oneshot
 IgnoreSIGPIPE=false
 #ExecStart=/usr/bin/php /opt/observium/discovery.php -h -q
-ExecStart=/usr/bin/python3.6 /opt/observium/poller-wrapper.py discovery --host new
+ExecStart=/usr/bin/python3.5 /opt/observium/poller-wrapper.py discovery --host new
 StandardOutput=null
 User=observium

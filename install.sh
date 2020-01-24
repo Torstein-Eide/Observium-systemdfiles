@@ -20,8 +20,10 @@ echo "Moving $SYSTEMD/$1 File for backup"
 
 }
 
-for file in $(find . -maxdepth 1 \( -name "*.timer" -o -name "*.service" \) -type f  -printf "%f\n" ); do
+for file in $(find . -maxdepth 1 \( -name "*.timer" -o -name "*.service" -o -name "*.target" \) -type f  -printf "%f\n" ); do
   Replace_file $file &
 done
-
+wait
 echo "Installed"
+systemctl daemon-reload
+echo "systemctl daemon-reloaded"

@@ -7,7 +7,8 @@ RequiresMountsFor=/opt/observium
 
 [Service]
 SyslogIdentifier=​Observium-poller
-Type=oneshot
+#Type=oneshot
 IgnoreSIGPIPE=false
-ExecStart=/usr/bin/python3.6 /opt/observium/poller-wrapper.py
+ExecStart=/usr/bin/python3.5 /opt/observium/poller-wrapper.py 
 User=observium
+RuntimeMaxSec=290
